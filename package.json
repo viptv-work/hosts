@@ -1,0 +1,26 @@
+{
+  "name": "hosts",
+  "version": "1.0.0",
+  "description": "get latest github hosts.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/viptv-work/hosts.git"
+  },
+  "keywords": [
+    "githb",
+    "hosts"
+  ],
+  "author": "viptv-work",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/orgs/viptv-work/discussions"
+  },
+  "homepage": "https://github.com/viptv-work/hosts#readme",
+  "dependencies": {}
+}
