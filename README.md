@@ -5,7 +5,7 @@
 `GitHub Hosts`主要是通过修改`host`的方式加速`GitHub`访问，解决图片无法加载以及访问速度慢的问题。
 
 - 主站: https://github.com/viptv-work/hosts
-- 镜像: https://gitlab.com/viptv-work/hosts
+- 镜像: https://gitlab.com/viptv/hosts
 - Github Pages: https://viptv-work.github.io/hosts/
 
 特点就是稳定！
@@ -18,7 +18,7 @@
 
 现在新增了`DNS`获取方案，欢迎使用并反馈。
 
-请查看 [next hosts](https://gitlab.com/viptv-work/hosts/-/raw/master/next-hosts)
+请查看 [next hosts](https://gitlab.com/viptv/hosts/-/raw/master/next-hosts)
 
 内容定时更新，最近更新时间：2023-03-08 20:22:25。
 
