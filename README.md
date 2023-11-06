@@ -121,8 +121,6 @@ curl -L https://github.com/viptv-work/hosts/releases/download/v1.0.1/hosts-serve
 
 这样就可以和最新的`hosts`保持同步。
 
-![switchhost-github.png](https://i.loli.net/2021/03/28/XnHW5xCEzel36fA.png)
-
 ### 手动配置
 
 #### macOS
@@ -162,7 +160,4 @@ ipconfig /flushdns
 ```
 
 ## 我的作品
-
-- [GitMaster](https://github.com/ineo6/git-master)：开发者助手，代码仓库结构浏览器扩展
 - [GitHub Hosts](https://github.com/viptv-work/hosts)：GitHub最新hosts，定时更新
-- [Awesome Mirror](https://github.com/ineo6/awesome-mirror)：镜像收集，旨在帮助你快速安装开发工具
