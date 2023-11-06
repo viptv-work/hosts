@@ -8,33 +8,20 @@
 - 镜像: https://gitlab.com/viptv-work/hosts
 - Github Pages: https://viptv-work.github.io/hosts/
 
+全新的`GitHub`访问加速工具，等待试用和反馈中，点击 [FastDev](https://github.com/viptv-work/fast-dev) 直达。
+
 特点就是稳定！
 
-> `hosts`地址可能会调整，所以请务必关注 GitHub、Gitlab 主页，保证不迷路，也可以关注公众号：湖中剑。
+> `hosts`地址可能会调整，所以请务必关注 GitHub、Gitlab 主页，保证不迷路，也可以关注公众号：viptv。
 
 ## 使用方式
 
 ### 1. 远程 hosts
 
-现在新增了`DNS`获取方案，欢迎使用并反馈。
-
-请查看 [next hosts](https://gitlab.com/viptv-work/hosts/-/raw/master/next-hosts)
-
-内容定时更新，最近更新时间：2023-03-08 20:22:25。
+内容定时更新，最近更新时间：{update_time}。
 
 ```bash
-# New！欢迎使用基于DNS的新方案
-# https://gitlab.com/viptv-work/hosts/-/raw/master/next-hosts
-# 地址可能会变动，请务必关注GitHub、Gitlab获取最新消息
-# 也可以关注公众号：湖中剑，保证不迷路
-# GitHub Host Start
-
-# Please Star : https://github.com/viptv-work/hosts
-# Mirror Repo : https://gitlab.com/viptv-work/hosts
-
-# Update at: 2023-03-08 20:22:25
-
-# GitHub Host End
+{hostContent}
 ```
 
 ### 2. 本地 hosts 服务

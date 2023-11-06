@@ -1,0 +1,71 @@
+name: UpdateHosts
+
+on:
+  push:
+    tags-ignore:
+      - "v*.*.*"
+  schedule:
+    - cron: '0 */2 * * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [14]
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Update hosts
+        run: npm run make
+
+      - name: Commit
+        id: commit
+        run: |
+          git config --global user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git config --global user.name github-actions[bot]
+          git add .
+          git commit -m "Update hosts"
+        continue-on-error: true
+
+      - name: Check on failures
+        if: steps.commit.outputs.status == 'failure'
+        run: exit 1
+
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.COMMIT_TOKEN }}
+
+      - name: Move files
+        run: |
+          mkdir ./public
+          mv ./README.md ./public/
+
+      - name: GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.COMMIT_TOKEN }}
+          publish_dir: ./public
+          enable_jekyll: true
+          keep_files: true
+
+  git-mirror:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: wearerequired/git-mirror-action@v1
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        with:
+          source-repo: 'git@github.com:viptv-work/hosts.git'
+          destination-repo: 'git@gitlab.com:viptv/hosts.git'
