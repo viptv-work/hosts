@@ -27,7 +27,7 @@ jobs:
       - name: Commit
         id: commit
         run: |
-          git config --global user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git config --global user.email 28900094+HeFung@users.noreply.github.com
           git config --global user.name github-actions[bot]
           git add .
           git commit -m "Update hosts"
@@ -40,7 +40,7 @@ jobs:
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.ACTION_TOKEN }}
 
       - name: Move files
         run: |
@@ -50,7 +50,7 @@ jobs:
       - name: GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.ACTION_TOKEN }}
           publish_dir: ./public
           enable_jekyll: true
           keep_files: true
@@ -61,7 +61,7 @@ jobs:
     steps:
       - uses: wearerequired/git-mirror-action@v1
         env:
-          SSH_PRIVATE_KEY: ${{ secrets.GITHUB_TOKEN }}
+          SSH_PRIVATE_KEY: ${{ secrets.ACTION_TOKEN }}
         with:
           source-repo: 'git@github.com:viptv-work/hosts.git'
           destination-repo: 'git@gitlab.com:viptv/hosts.git'
